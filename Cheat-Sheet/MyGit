@@ -1,0 +1,78 @@
+
+BASICS:================
+
+git clone <repository name> //Take clone of any repository
+
+git status //Check modified files/folders
+
+git branch //Check current branch
+
+git branch -a //Check list of all branches 
+
+git fetch -a //Fetch new added branches
+
+REBASE:================
+
+eg:- If you want to rebase from "staging" to "feature" branch 
+
+WAY-1 ---------------------------------------
+(This is a multi step process to take rebase)
+git checkout <staging> //Switch to other branch
+
+git pull //Take latest pull in same branch (Make working tree clean before use this)
+
+git checkout <feature>
+
+git rebase <staging> //Take latest pull from different branch (Make working tree clean before use this)
+
+OR WAY-2 -------------------------------------
+(This is a single step process to take rebase)
+
+git pull --rebase origin <staging>
+
+//After take rebase (either way-1 or way2) if no conflict found so just do push
+git push
+
+//After take rebase (either way-1 or way2) if found conflict fix manuall then check status
+git status
+git add <modifid files> (Need to only add, no need to commit )
+git rebase --continue //Use this command until you not found any more conflict
+
+// After complete rebase with conflict fix, push the code
+git push -f //Use force push because after conflic fix normal push can eject
+
+
+git add <modified file1> <modified file2> //Add your changes in git (on local)
+
+git commit -m "Message about your work" //Commit your changes in git (on local)
+
+git push //Push your changes on git (on server)
+
+STASH:=============
+
+git stash save "message to your work" //Save in stash
+
+git stash list //List of your saved stash
+
+git stash apply stash@{0} //Restore your work from stash
+
+TAG:========================
+
+// How to push tag fro trigger build?
+git pull          // take latest pull in the branch
+git tag -l       // show all previous tags
+git tag -a vx.y.z -m "Add a description of what is being added in this release"     // create tag
+git push --tags     // push tag
+
+
+UPDATE:=======================
+
+// Update last pushed commit message
+git commit -m  "YOUR UPDATED MESSAGE" --amend --no-edit
+git push -f
+
+
+CONFIG:============
+
+
+
