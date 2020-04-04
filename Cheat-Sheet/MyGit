@@ -11,6 +11,13 @@ git branch -a //Check list of all branches
 
 git fetch -a //Fetch new added branches
 
+git add <modified file1> <modified file2> //Add your changes in git (on local)
+
+git commit -m "Message about your work" //Commit your changes in git (on local)
+
+git push //Push your changes on git (on server)
+
+
 REBASE:================
 
 eg:- If you want to rebase from "staging" to "feature" branch 
@@ -35,18 +42,13 @@ git push
 
 //After take rebase (either way-1 or way2) if found conflict fix manuall then check status
 git status
-git add <modifid files> (Need to only add, no need to commit )
+git add <modifid files> 
+git commit -m "Fixed conflicts"
 git rebase --continue //Use this command until you not found any more conflict
 
 // After complete rebase with conflict fix, push the code
 git push -f //Use force push because after conflic fix normal push can eject
 
-
-git add <modified file1> <modified file2> //Add your changes in git (on local)
-
-git commit -m "Message about your work" //Commit your changes in git (on local)
-
-git push //Push your changes on git (on server)
 
 STASH:=============
 
