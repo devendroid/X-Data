@@ -76,5 +76,30 @@ git push -f
 
 CONFIG:============
 
+git config --list  //To see configuration
+git config user.name "Full Name" //Change name to current repo only
+git config user.email "email@address.com" //Change email to current repo only
+git config --global user.name "Full Name" //Change name to globally
+git config --global user.email "email@address.com" //Change email to globally
+
+PUSH IN WRONG BRANCH ? ===========================
+(If you pushe din wrong branch, the how to fix this issue)
+
+WAY-1 ---------------------------------------
+git reset --soft HEAD^ //Get back your last pushed commit
+git checkout correct-branch //Switch to your correct branch
+git push //Now push commit normally, if unable to push use force push using git push -f 
+
+OR WAY-2 ------------------------------------
+git checkout correct-branch //Switch to your correct branch 
+git cherry-pick 65c356c8c //Transfer your pushed commit into your right branch
+git push //Now push commit normally, if unable to push use force push using git push -f 
+
+git checkout wrong-branch //Switch to back your wrong branch
+git reset --hard HEAD~1 //Remove your last one pushed commit from wrong branch 
+git push //Now push commit normally, if unable to push use force push using git push -f 
+
+
+
 
 
