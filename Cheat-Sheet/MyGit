@@ -99,6 +99,10 @@ git checkout wrong-branch //Switch to back your wrong branch
 git reset --hard HEAD~1 //Remove your last one pushed commit from wrong branch 
 git push //Now push commit normally, if unable to push use force push using git push -f 
 
+UNDO LOCAL COMMIT========
+
+git reset HEAD^ // Where ^ demote your last commits
+
 
 
 
