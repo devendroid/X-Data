@@ -103,6 +103,10 @@ UNDO LOCAL COMMIT========
 
 git reset HEAD^ // Where ^ demote your last commits
 
+UNDO LOCAL ADD==========
+
+git reset <file>
+
 
 
 
