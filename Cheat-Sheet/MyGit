@@ -1,5 +1,5 @@
 
-BASICS:================
+BASICS:==================
 
 git clone <repository name> //Take clone of any repository
 
@@ -18,7 +18,7 @@ git commit -m "Message about your work" //Commit your changes in git (on local)
 git push //Push your changes on git (on server)
 
 
-REBASE:================
+REBASE:====================
 
 eg:- If you want to rebase from "staging" to "feature" branch 
 
@@ -50,7 +50,30 @@ git rebase --continue //Use this command until you not found any more conflict
 git push -f //Use force push because after conflic fix normal push can eject
 
 
-STASH:=============
+MERGE LOCAL:====================
+
+// If you dont want force push after fix conflict then this option is very usefull as a alternative of rebase
+
+eg:- merge parent-branch into child-branch locally then push in child-branch (we are not going to push anything in parent-branch)
+
+git checkout parent-branch
+git  pull parent-branch
+git checkout child-branch
+git pull 
+git merge parent-branch // you are merging parent-branch into child-branch which is going to have conflicts
+// manually fix all your conflicts
+git add .
+git commit 
+git push 
+
+NOTE:-
+It will show all conflict at once after runing git merge parent-branch 
+You can do a git status and you’ll see a list of files with changes green files (staged) means there are no conflicts.
+red files will have conflicts with the usual git markers for conflicts.
+git merge --abort is also useful in case you want to start over. 
+
+
+STASH:======================
 
 git stash save "message to your work" //Save in stash
 
@@ -58,13 +81,19 @@ git stash list //List of your saved stash
 
 git stash apply stash@{0} //Restore your work from stash
 
-TAG:========================
+TAG (Create/Push):===============
 
 // How to push tag fro trigger build?
 git pull          // take latest pull in the branch
 git tag -l       // show all previous tags
 git tag -a vx.y.z -m "Add a description of what is being added in this release"     // create tag
 git push --tags     // push tag
+
+TAG (Remove):===============
+
+// Remove unwanted tag
+git tag -d <tagname>
+git push origin --delete <tagname>
 
 
 UPDATE:=======================
