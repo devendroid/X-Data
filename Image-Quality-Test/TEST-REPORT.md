@@ -1,4 +1,4 @@
-## Image Quality Test After Compression
+## Image Quality Comparison
 
 | SN | Original | MAX_IMAGE_SIZE = 800 <br/> CompressFormat = JPEG <br/> CompressQuality = 100 | MAX_IMAGE_SIZE = 1280 <br/> CompressFormat = JPEG <br/> CompressQuality = 80 |
 | --- | --- | --- | --- |
